@@ -1,56 +1,97 @@
 {% extends 'layout.html' %}
 
 {% block body %}
-    <h1>You can contact me on Github.</h1>
-
+    <h1>Workload Calculator</h1>
+    <br>
+    <p> We are going to ask you a couple of questions to help you plan your work. Ask as honestly as possible, and if you don't know a value, put an estimate</p></p>
+    <br>
     <p class="lead">
         <form method="POST" action="submit" novalidate>
             {{ form.csrf_token }}
-            {{ form.name.label }} {{ form.name(size=20) }}
-            {% for error in form.name.errors %}
+            {{ form.module_number.label }} {{ form.module_number(size=1) }}
+            {% for error in form.module_number.errors %}
                 <span style="color: red;">[{{ error }}]</span>
             {% endfor %}</br>
-            {{ form.email.label }} {{ form.email(size=60) }}
-            {% for error in form.email.errors %}
+            {{ form.hours_in_dissertation.label }} {{ form.hours_in_dissertation(size=3) }}
+            {% for error in form.hours_in_dissertation.errors %}
                 <span style="color: red;">[{{ error }}]</span>
             {% endfor %}</br>
-            {{ form.dob.label }} {{ form.dob(size=20) }}
-            {% for error in form.dob.errors %}
+
+        </br>
+        </br>
+        Check the boxes if you already attended that module
+        </br>
+        </br>
+
+        {{ form.module_1_boolean }} {{ form.module_1_boolean.label }}</br>
+        {{ form.module_2_boolean }} {{ form.module_2_boolean.label }}</br>
+        {{ form.module_3_boolean }} {{ form.module_3_boolean.label }}</br>
+        {{ form.module_4_boolean }} {{ form.module_4_boolean.label }}</br>
+        {{ form.module_5_boolean }} {{ form.module_5_boolean.label }}</br>
+        {{ form.module_6_boolean }} {{ form.module_6_boolean.label }}</br>
+        {{ form.module_7_boolean }} {{ form.module_7_boolean.label }}</br>
+        {{ form.module_8_boolean }} {{ form.module_8_boolean.label }}</br>
+        {{ form.module_9_boolean }} {{ form.module_9_boolean.label }}</br>
+        {{ form.module_10_boolean }} {{ form.module_10_boolean.label }}</br>
+
+        </br>
+        Input your percentage of work done on each module's PMA
+        </br>
+        </br>
+
+            {{ form.module_1_PMA_percentage.label }} {{ form.module_1_PMA_percentage(size=3) }}
+            {% for error in form.module_1_PMA_percentage.errors %}
                 <span style="color: red;">[{{ error }}]</span>
             {% endfor %}</br>
-            {{ form.specialism.label }} {{ form.specialism(size=40) }}
-            {% for error in form.specialism.errors %}
+
+            {{ form.module_2_PMA_percentage.label }} {{ form.module_2_PMA_percentage(size=3) }}
+            {% for error in form.module_2_PMA_percentage.errors %}
                 <span style="color: red;">[{{ error }}]</span>
             {% endfor %}</br>
-            <input type="submit" value="submit">
+
+            {{ form.module_3_PMA_percentage.label }} {{ form.module_3_PMA_percentage(size=3) }}
+            {% for error in form.module_3_PMA_percentage.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}</br>
+
+            {{ form.module_4_PMA_percentage.label }} {{ form.module_4_PMA_percentage(size=3) }}
+            {% for error in form.module_4_PMA_percentage.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}</br>            
+
+            {{ form.module_5_PMA_percentage.label }} {{ form.module_5_PMA_percentage(size=3) }}
+            {% for error in form.module_5_PMA_percentage.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}</br>     
+
+            {{ form.module_6_PMA_percentage.label }} {{ form.module_6_PMA_percentage(size=3) }}
+            {% for error in form.module_6_PMA_percentage.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}</br>           
+
+            {{ form.module_7_PMA_percentage.label }} {{ form.module_7_PMA_percentage(size=3) }}
+            {% for error in form.module_7_PMA_percentage.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}</br>     
+
+            {{ form.module_8_PMA_percentage.label }} {{ form.module_8_PMA_percentage(size=3) }}
+            {% for error in form.module_8_PMA_percentage.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}</br>        
+
+            {{ form.module_9_PMA_percentage.label }} {{ form.module_9_PMA_percentage(size=3) }}
+            {% for error in form.module_9_PMA_percentage.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}</br>       
+
+            {{ form.module_10_PMA_percentage.label }} {{ form.module_10_PMA_percentage(size=3) }}
+            {% for error in form.module_10_PMA_percentage.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}</br>            
+            
+            </br>
+            <input type="submit" value="Submit">
         </form>
     </p>
 
-    <h1>{{ app_data['description'] }}</h1>
-    <h2>Table page</h2>
-
-    <p class="lead">
-	<table>
-		<th>
-			<tr>     
-			<td><b>ID</b></td> 
-			<td><b>Name</b></td>
-			<td><b>Email</b></td> 
-			<td><b>Age</b></td> 
-			<td><b>Specialism</b></td> 
-			</tr>
-		</th>
-
-		{% for key,value in df.iterrows() %}
-		<tr>
-			<td>{{ value['ID'] }}</td>
-			<td>{{ value['Name'] }}</td>
-			<td>{{ value['Email'] }}</td>
-			<td>{{ value['Age'] }}</td>
-			<td>{{ value['Specialism'] }}</td>
-		{%endfor%} 
-		</tr>
-  	</table>
-</p>
-    <div> Now updated to Bootstrap (Version 4.4.1)</div>
 {% endblock %}
