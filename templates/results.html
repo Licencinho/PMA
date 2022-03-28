@@ -1,6 +1,25 @@
 {% extends 'layout.html' %}
 
 {% block body %}
-    <h1>Your form is correct!</h1>
+    <h1>These are your results!</h1>
+
+    <br>
+
+    <h3>{{ formResults['hours_in_modules_and_PMAs'] }} hours spent on modules and PMAs to date</h3>
+    <br>
+    <h3>{{ formResults['module_hours_to_do'] }} hours to work on remaining modules and PMAs</h3>
+    <br>
+    <h3>{{ formResults['dissertation_hours_to_do'] }} hours to work on your dissertation</h3>
+    <br>
+    <h3>{{ formResults['weeks_to_submission'] }} weeks to submit your dissertation</h3>
+    <br>
+    <h3>You need to work from now on {{ formResults['hours_per_week'] }} hours per week to finish everything</h3>
+    <br>
+    <h3>If you want to rest on weekends, you'll have to work {{ formResults['hours_per_day_in_5_day_week'] }} hours per day</h3>
+    <br>
+    <h3>If you want to rest only on Sundays, you'll have to work {{ formResults['hours_per_day_in_6_day_week'] }} hours per day</h3>
+    <br>
+    <h3>If you want to work every single day, you'll have to work {{ formResults['hours_per_day_in_7_day_week'] }} hours per day</h3>
+
 
 {% endblock %}
