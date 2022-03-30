@@ -8,87 +8,215 @@
     <p class="lead">
         <form method="POST" action="submit" novalidate>
             {{ form.csrf_token }}
-            {{ form.module_number.label }} {{ form.module_number(size=1) }}
-            {% for error in form.module_number.errors %}
-                <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}</br>
             {{ form.hours_in_dissertation.label }} {{ form.hours_in_dissertation(size=3) }}
             {% for error in form.hours_in_dissertation.errors %}
                 <span style="color: red;">[{{ error }}]</span>
             {% endfor %}</br>
 
-        </br>
-        </br>
-        Check the boxes if you already attended that module
-        </br>
-        </br>
+            </br>
+            </br>
+            <b>Check the boxes if you already attended that module</b>
+            </br>
+            </br>
 
-        {{ form.module_1_boolean }} {{ form.module_1_boolean.label }}</br>
-        {{ form.module_2_boolean }} {{ form.module_2_boolean.label }}</br>
-        {{ form.module_3_boolean }} {{ form.module_3_boolean.label }}</br>
-        {{ form.module_4_boolean }} {{ form.module_4_boolean.label }}</br>
-        {{ form.module_5_boolean }} {{ form.module_5_boolean.label }}</br>
-        {{ form.module_6_boolean }} {{ form.module_6_boolean.label }}</br>
-        {{ form.module_7_boolean }} {{ form.module_7_boolean.label }}</br>
-        {{ form.module_8_boolean }} {{ form.module_8_boolean.label }}</br>
-        {{ form.module_9_boolean }} {{ form.module_9_boolean.label }}</br>
-        {{ form.module_10_boolean }} {{ form.module_10_boolean.label }}</br>
+<!-- I couldn't find a better way to do this. I tried with FieldLists but they don't accept boolean and I couldn't set min_entries as a variable either -->
+<!-- This code is seeing the number of rows in the modules csv and adding the respective boolean next to it -->
 
-        </br>
-        Input your percentage of work done on each module's PMA
-        </br>
-        </br>
+            {% for key, value in df.iterrows() %}
 
-            {{ form.module_1_PMA_percentage.label }} {{ form.module_1_PMA_percentage(size=3) }}
-            {% for error in form.module_1_PMA_percentage.errors %}
-                <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}</br>
+                {% if key == 0 %}
+                    {{ form.module_1_boolean }} {{ value['module']}}</br>
+                {% endif %}
+                {% if key == 1 %}
+                    {{ form.module_2_boolean }} {{ value['module']}}</br>
+                {% endif %}
+                {% if key == 2 %}
+                    {{ form.module_3_boolean }} {{ value['module']}}</br>
+                {% endif %}
+                {% if key == 3 %}
+                    {{ form.module_4_boolean }} {{ value['module']}}</br>
+                {% endif %}
+                {% if key == 4 %}
+                    {{ form.module_5_boolean }} {{ value['module']}}</br>
+                {% endif %}
+                {% if key == 5 %}
+                    {{ form.module_6_boolean }} {{ value['module']}}</br>
+                {% endif %}
+                {% if key == 6 %}
+                    {{ form.module_7_boolean }} {{ value['module']}}</br>
+                {% endif %}                     
+                {% if key == 7 %}
+                    {{ form.module_8_boolean }} {{ value['module']}}</br>
+                {% endif %}                          
+                {% if key == 8 %}
+                    {{ form.module_9_boolean }} {{ value['module']}}</br>
+                {% endif %}                          
+                {% if key == 9 %}
+                    {{ form.module_10_boolean }} {{ value['module']}}</br>
+                {% endif %}                         
+                {% if key == 10 %}
+                    {{ form.module_11_boolean }} {{ value['module']}}</br>                        
+                {% endif %}  
+                {% if key == 11 %}
+                    {{ form.module_12_boolean }} {{ value['module']}}</br>
+                {% endif %}                         
+                {% if key == 12 %}
+                    {{ form.module_13_boolean }} {{ value['module']}}</br>
+                {% endif %}                          
+                {% if key == 13 %}
+                    {{ form.module_14_boolean }} {{ value['module']}}</br>
+                {% endif %}                         
+                {% if key == 14 %}
+                    {{ form.module_15_boolean }} {{ value['module']}}</br>
+                {% endif %}                          
+                {% if key == 15 %}
+                    {{ form.module_16_boolean }} {{ value['module']}}</br>
+                {% endif %}                          
+                {% if key == 16 %}
+                    {{ form.module_17_boolean }} {{ value['module']}}</br>
+                {% endif %}                          
+                {% if key == 17 %}
+                    {{ form.module_18_boolean }} {{ value['module']}}</br>
+                {% endif %}                         
+                {% if key == 18 %}
+                    {{ form.module_19_boolean }} {{ value['module']}}</br>
+                {% endif %}                          
+                {% if key == 19 %}
+                    {{ form.module_20_boolean }} {{ value['module']}}</br>
+                {% endif %}                           
 
-            {{ form.module_2_PMA_percentage.label }} {{ form.module_2_PMA_percentage(size=3) }}
-            {% for error in form.module_2_PMA_percentage.errors %}
-                <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}</br>
+            {% endfor %} 
 
-            {{ form.module_3_PMA_percentage.label }} {{ form.module_3_PMA_percentage(size=3) }}
-            {% for error in form.module_3_PMA_percentage.errors %}
-                <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}</br>
+            </br>
+            <b>Input your percentage of work done on each module's PMA</b>
+            </br>
+            </br>
 
-            {{ form.module_4_PMA_percentage.label }} {{ form.module_4_PMA_percentage(size=3) }}
-            {% for error in form.module_4_PMA_percentage.errors %}
-                <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}</br>            
+    <!-- The same as before, but for the PMA percentage per module. I'm sorry again :( -->
 
-            {{ form.module_5_PMA_percentage.label }} {{ form.module_5_PMA_percentage(size=3) }}
-            {% for error in form.module_5_PMA_percentage.errors %}
-                <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}</br>     
-
-            {{ form.module_6_PMA_percentage.label }} {{ form.module_6_PMA_percentage(size=3) }}
-            {% for error in form.module_6_PMA_percentage.errors %}
-                <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}</br>           
-
-            {{ form.module_7_PMA_percentage.label }} {{ form.module_7_PMA_percentage(size=3) }}
-            {% for error in form.module_7_PMA_percentage.errors %}
-                <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}</br>     
-
-            {{ form.module_8_PMA_percentage.label }} {{ form.module_8_PMA_percentage(size=3) }}
-            {% for error in form.module_8_PMA_percentage.errors %}
-                <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}</br>        
-
-            {{ form.module_9_PMA_percentage.label }} {{ form.module_9_PMA_percentage(size=3) }}
-            {% for error in form.module_9_PMA_percentage.errors %}
-                <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}</br>       
-
-            {{ form.module_10_PMA_percentage.label }} {{ form.module_10_PMA_percentage(size=3) }}
-            {% for error in form.module_10_PMA_percentage.errors %}
-                <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}</br>            
-            
+            {% for key,value in df.iterrows() %}
+                {% if key == 0 %}
+                    {{ form.module_1_PMA_percentage(size=3) }}% {{ value['module']}} 
+                    {% for error in form.module_1_PMA_percentage.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}</br>
+                {% endif %}    
+                {% if key == 1 %}
+                    {{ form.module_2_PMA_percentage(size=3) }}% {{ value['module']}} 
+                    {% for error in form.module_2_PMA_percentage.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}</br>
+                {% endif %}
+                {% if key == 2 %}
+                    {{ form.module_3_PMA_percentage(size=3) }}% {{ value['module']}} 
+                    {% for error in form.module_3_PMA_percentage.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}</br>
+                {% endif %}
+                {% if key == 3 %}
+                    {{ form.module_4_PMA_percentage(size=3) }}% {{ value['module']}} 
+                    {% for error in form.module_4_PMA_percentage.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}</br>
+                {% endif %}
+                {% if key == 4 %}
+                    {{ form.module_5_PMA_percentage(size=3) }}% {{ value['module']}} 
+                    {% for error in form.module_5_PMA_percentage.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}</br>
+                {% endif %}
+                {% if key == 5 %}
+                    {{ form.module_6_PMA_percentage(size=3) }}% {{ value['module']}} 
+                    {% for error in form.module_6_PMA_percentage.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}</br>
+                {% endif %}
+                {% if key == 6 %}
+                    {{ form.module_7_PMA_percentage(size=3) }}% {{ value['module']}} 
+                    {% for error in form.module_7_PMA_percentage.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}</br>
+                {% endif %}
+                {% if key == 7 %}
+                    {{ form.module_8_PMA_percentage(size=3) }}% {{ value['module']}} 
+                    {% for error in form.module_8_PMA_percentage.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}</br>
+                {% endif %}
+                {% if key == 8 %}
+                    {{ form.module_9_PMA_percentage(size=3) }}% {{ value['module']}} 
+                    {% for error in form.module_9_PMA_percentage.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}</br>
+                {% endif %}    
+                {% if key == 9 %}
+                    {{ form.module_10_PMA_percentage(size=3) }}% {{ value['module']}} 
+                    {% for error in form.module_10_PMA_percentage.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}</br>
+                {% endif %}    
+                {% if key == 10 %}
+                    {{ form.module_11_PMA_percentage(size=3) }}% {{ value['module']}} 
+                    {% for error in form.module_11_PMA_percentage.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}</br>
+                {% endif %}    
+                {% if key == 11 %}
+                    {{ form.module_12_PMA_percentage(size=3) }}% {{ value['module']}} 
+                    {% for error in form.module_12_PMA_percentage.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}</br>
+                {% endif %}    
+                {% if key == 12 %}
+                    {{ form.module_13_PMA_percentage(size=3) }}% {{ value['module']}} 
+                    {% for error in form.module_13_PMA_percentage.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}</br>
+                {% endif %}    
+                {% if key == 13 %}
+                    {{ form.module_14_PMA_percentage(size=3) }}% {{ value['module']}} 
+                    {% for error in form.module_14_PMA_percentage.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}</br>
+                {% endif %}    
+                {% if key == 14 %}
+                    {{ form.module_15_PMA_percentage(size=3) }}% {{ value['module']}} 
+                    {% for error in form.module_15_PMA_percentage.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}</br>
+                {% endif %}
+                {% if key == 15 %}
+                    {{ form.module_16_PMA_percentage(size=3) }}% {{ value['module']}} 
+                    {% for error in form.module_16_PMA_percentage.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}</br>
+                {% endif %}    
+                {% if key == 16 %}
+                    {{ form.module_17_PMA_percentage(size=3) }}% {{ value['module']}} 
+                    {% for error in form.module_17_PMA_percentage.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}</br>
+                {% endif %}    
+                {% if key == 17 %}
+                    {{ form.module_18_PMA_percentage(size=3) }}% {{ value['module']}} 
+                    {% for error in form.module_18_PMA_percentage.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}</br>
+                {% endif %}
+                {% if key == 18 %}
+                    {{ form.module_19_PMA_percentage(size=3) }}% {{ value['module']}} 
+                    {% for error in form.module_19_PMA_percentage.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}</br>
+                {% endif %}
+                {% if key == 19 %}
+                    {{ form.module_20_PMA_percentage(size=3) }}% {{ value['module']}} 
+                    {% for error in form.module_20_PMA_percentage.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}</br>
+                {% endif %}
+            {%endfor%} 
+           
             </br>
             <input type="submit" value="Submit">
         </form>

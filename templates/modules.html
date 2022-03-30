@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+    {% block body %}
+
+    <h1>Register a new module:</h1>
+
+    <p class="lead">
+        <form method="POST" action="create" novalidate>
+            {{ form.csrf_token }}
+            {{ form.module.label }} {{ form.module(size=20) }}
+            {% for error in form.module.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}</br>
+            <input type="submit" value="Register">
+        </form>
+    </p>
+    <span style="color: red;">{{ module_limit_message }}</span>
+    <br>
+    <h1>These are your registered modules:</h1>
+    
+    <br>
+    <p class="lead">
+        {% for key,value in df.iterrows() %}
+        <ul>
+            <li>{{ value['module'] }}</li>
+        </ul>
+        {%endfor%} 
+    </p>
+    <br>
+{% endblock %}

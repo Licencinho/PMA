@@ -4,7 +4,8 @@
     <h1>These are your results!</h1>
 
     <br>
-
+    <h3>You have {{ formResults['number_of_modules'] }} modules</h3>
+    <br>
     <h3>{{ formResults['hours_in_modules_and_PMAs'] }} hours spent on modules and PMAs to date</h3>
     <br>
     <h3>{{ formResults['module_hours_to_do'] }} hours to work on remaining modules and PMAs</h3>
@@ -20,6 +21,9 @@
     <h3>If you want to rest only on Sundays, you'll have to work {{ formResults['hours_per_day_in_6_day_week'] }} hours per day</h3>
     <br>
     <h3>If you want to work every single day, you'll have to work {{ formResults['hours_per_day_in_7_day_week'] }} hours per day</h3>
+    <br>
+    <br>
+    <br>
 
 
 {% endblock %}
