@@ -1,0 +1,21 @@
+{% block body %}
+
+
+    <img src="static\plannerd_logo.png" alt="Plannerd" width="400" height="142" > </img>
+    <br>
+    <h1>Welcome to Plannerd! Please Login</h1>
+    <br>
+    <form method="POST" action="login" novalidate>
+      {{ form.csrf_token }}
+      {{ form.email.label }} {{ form.email }}
+      <br>
+      {{ form.password.label }} {{ form.password }}
+      <br>
+      <input type="submit" value="Login">
+    </form>
+    
+    <br>
+    <span style="color: red;">{{ login_message }}</span>
+    <br>
+    <br>
+{% endblock %}
