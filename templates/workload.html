@@ -3,8 +3,10 @@
 {% block body %}
     <h1>Workload Calculator</h1>
     <br>
+    <span style="font-size: 20px;">
     <p> We are going to ask you a couple of questions to help you plan your work. Ask as honestly as possible, and if you don't know a value, put an estimate</p></p>
     <br>
+
     <p class="lead">
         <form method="POST" action="submit" novalidate>
             {{ form.csrf_token }}
@@ -218,7 +220,8 @@
             {%endfor%} 
            
             </br>
-            <input type="submit" value="Submit">
+        </span>
+            <input class = "button" type="submit" value="Submit">
         </form>
     </p>
 

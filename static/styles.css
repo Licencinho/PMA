@@ -1,0 +1,120 @@
+/* Additional CSS styles for the classes created for Plannerd */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+.login {
+    padding: 20px;
+    background-color: #f3f3f3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /*Centering adapted from https://css-tricks.com/quick-css-trick-how-to-center-an-object-exactly-in-the-center/ */
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+ 
+.button {
+  background-color: #2e559c;
+  color: white;
+  padding: 12px 34px;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 8px;
+  transition-duration: 0.4s;
+  margin: 10px
+}
+.button:hover {
+  background-color: white;
+  color: black;
+}
+
+.form-container{
+  width:80%;
+  margin:auto;
+}
+
+.form-login-field {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  width:50%;
+  float:right;
+}
+.form-login-field:focus {
+  border: 3px solid #555;
+}
+
+.form-login-label{
+  width:30%;
+  font-size: 20px;
+  padding: 12px 5px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  display: inline-block;
+  text-align: right;
+}
+
+.form-label{
+  font-size: 20px;
+  padding: 12px 5px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+.form-field {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  width:50%;
+}
+.form-field:focus {
+  border: 3px solid #555;
+}
+
+.left-column {
+  width: 33%;
+  height: 150px;
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 4px;
+  margin-right: 4px;
+  border: 2px solid #e4bcbc;
+  border-radius: 5px;
+  margin:auto;
+}
+
+.middle-column {
+  width: 33%;
+  text-align: center;
+  height: 150px;
+  font-size: 20px;
+  margin-bottom: 4px;
+  border: 2px solid #e4bcbc;
+  border-radius: 5px;
+  margin: auto;
+}
+
+.right-column {
+  width: 33%;
+  text-align: center;
+  height: 150px;
+  font-size: 20px;
+  margin-bottom: 4px;
+  margin-left: 4px;
+  border: 2px solid #e4bcbc;
+  border-radius: 5px;
+  margin:auto;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.row{
+  margin:4px
+}

@@ -1,27 +1,52 @@
 {% extends 'layout.html' %}
 
 {% block body %}
-    <h1>These are your results!</h1>
-
+    <span style = "text-align: center;"><h1>These are your results!</h1> </span>
     <br>
-    <h3>You have {{ formResults['number_of_modules'] }} modules</h3>
     <br>
-    <h3>{{ formResults['hours_in_modules_and_PMAs'] }} hours spent on modules and PMAs to date</h3>
     <br>
-    <h3>{{ formResults['module_hours_to_do'] }} hours to work on remaining modules and PMAs</h3>
-    <br>
-    <h3>{{ formResults['dissertation_hours_to_do'] }} hours to work on your dissertation</h3>
-    <br>
-    <h3>{{ formResults['weeks_to_submission'] }} weeks to submit your dissertation</h3>
-    <br>
-    <h3>You need to work from now on {{ formResults['hours_per_week'] }} hours per week to finish everything</h3>
-    <br>
-    <h3>If you want to rest on weekends, you'll have to work {{ formResults['hours_per_day_in_5_day_week'] }} hours per day</h3>
-    <br>
-    <h3>If you want to rest only on Sundays, you'll have to work {{ formResults['hours_per_day_in_6_day_week'] }} hours per day</h3>
-    <br>
-    <h3>If you want to work every single day, you'll have to work {{ formResults['hours_per_day_in_7_day_week'] }} hours per day</h3>
-    <br>
+    <div class="row">
+        <div class="left-column">
+            <span style = "font-size: 40px;"><p>{{ formResults['number_of_modules'] }} Modules</p></span>
+            <p>in total</p>
+        </div>
+        <div class="middle-column">
+            <span style = "font-size: 40px;"><p>{{ formResults['hours_in_modules_and_PMAs'] }} Hours</p></span>
+            <p>spent on modules and PMAs to date</p>
+        </div>
+        <div class="right-column">
+            <span style = "font-size: 40px"><p>{{ formResults['weeks_to_submission'] }} Weeks</p></span>
+            <p>to submit your dissertation</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="left-column">
+            <span style = "font-size: 40px"><p>{{ formResults['module_hours_to_do'] }} Hours</p></span>
+            <p>to work on remaining modules and PMAs</p>
+        </div>
+        <div class ="middle-column">
+            <span style = "font-size: 40px"><p>{{ formResults['dissertation_hours_to_do'] }} Hours</p></span>
+            <p>to work on your dissertation</p>
+        </div>
+        <div class ="right-column">    
+            <span style = "font-size: 40px"><p>{{ formResults['hours_per_week'] }} Hrs per Week</p></span>
+            <p>of work needed to finish everything</p>
+        </div>
+    </div>
+    <div class= "row">
+        <div class ="left-column">
+            <span style = "font-size: 40px"><p>{{ formResults['hours_per_day_in_5_day_week'] }} Hrs per Day</p></span>
+            <p>of work needed if you want to rest on weekends</p>
+        </div>
+        <div class ="middle-column">
+            <span style = "font-size: 40px"><p>{{ formResults['hours_per_day_in_6_day_week'] }} Hrs per Day</p></span>
+            <p>of work needed if you want to rest on Sundays</p>
+        </div>
+        <div class ="right-column">
+            <span style = "font-size: 40px"><p>{{ formResults['hours_per_day_in_7_day_week'] }} Hrs per Day</p></span>
+            <p>of work needed if you are willing to work every single day</p>
+        </div>
+    </div>
     <br>
     <br>
 
